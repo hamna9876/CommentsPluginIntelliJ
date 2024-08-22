@@ -2,6 +2,7 @@
 <idea-plugin>
     <id>com.github.hamna9876.commentspluginintellij</id>
     <name>CommentsPluginIntelliJ</name>
+    <version>0.0.1</version>
     <vendor>hamna9876</vendor>
 
     <depends>com.intellij.modules.platform</depends>
@@ -11,6 +12,12 @@
     <extensions defaultExtensionNs="com.intellij">
         <toolWindow factoryClass="com.github.hamna9876.commentspluginintellij.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
     </extensions>
+
+    <actions>
+        <action id="helloworld" class="com.github.hamna9876.commentspluginintellij.actions.HelloWorldActions" text="Hello World :P">
+            <add-to-group group-id="ToolsMenu" anchor="first" />
+        </action>
+    </actions>
 
     <applicationListeners>
         <listener class="com.github.hamna9876.commentspluginintellij.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
