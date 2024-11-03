@@ -1,0 +1,57 @@
+tasks:
+- name: 'look into tree sitter/parsing: watch a video and/or get chatgpt to explain'
+  duration: 3
+  priority: 3
+  high_focus: true
+  cost: 2
+  deadline: 5
+  complication_probability: 0.0
+- name: make the tables responsive
+  duration: 2
+  priority: 2
+  high_focus: true
+  cost: 2
+  deadline: 1
+  complication_probability: 0.0
+- name: workout pull ups and walk
+  duration: 1
+  priority: 3
+  high_focus: false
+  cost: 3
+  deadline: 3
+  complication_probability: 0.0
+- name: quran class
+  duration: 2
+  priority: 4
+  high_focus: true
+  cost: 3
+  deadline: 3
+  complication_probability: 0.0
+- name: 'brilliant course: spend 8 hrs on the course'
+  duration: 6
+  priority: 4
+  high_focus: true
+  cost: 3
+  deadline: 6
+  complication_probability: 0.0
+- name: sort out vanity storage
+  duration: 1
+  priority: 2
+  high_focus: false
+  cost: 1
+  deadline: 6
+  complication_probability: 0.0
+- name: workout abs
+  duration: 1
+  priority: 3
+  high_focus: false
+  cost: 3
+  deadline: 4
+  complication_probability: 0.0
+- name: workout legs
+  duration: 1
+  priority: 3
+  high_focus: false
+  cost: 3
+  deadline: 5
+  complication_probability: 0.0

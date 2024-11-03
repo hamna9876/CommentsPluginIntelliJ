@@ -1,0 +1,60 @@
+package com.github.hamna9876.commentspluginintellij.actions
+
+import com.intellij.openapi.editor.EditorFactory
+import com.intellij.openapi.fileEditor.FileDocumentManager
+import com.intellij.openapi.project.Project
+import com.intellij.openapi.vfs.VirtualFile
+import java.io.File
+import java.nio.charset.Charset
+
+fun main()
+{
+    val text = readFromFile("src/main/resources/tasks (7).yaml")
+    //println(text)
+    println("Hello World")
+    print(countCharacters(text))
+
+}
+
+     private fun readFromFile(path:String) : String {
+        val file = File(path)
+        return file.readText(Charset.defaultCharset())
+     }
+
+    //input is the file, should return an array of the indexes of lines where there is a comment!
+    fun findCommentUsingRegex(file: String) : ArrayList<Int> {
+        for(currentLine in file) {
+           // if(currentLine.matches())
+        }
+    }
+
+
+    fun countCharacters(file: String) : Map<Char, Int> {
+        val charMap = mutableMapOf<Char, Int>()
+        for (currentChar in file)
+        {
+            if (charMap.contains(currentChar)) {
+                var iterateCurrentValue = charMap[currentChar]!! + 1
+                charMap.put(currentChar, iterateCurrentValue)
+            } else {
+                charMap.put(currentChar, 0)
+            }
+        }
+        return charMap
+    }
+
+
+//    fun readFile(virtualFile: VirtualFile) {
+//        val document = FileDocumentManager.getInstance().getDocument(virtualFile)
+//        val fileContent = document?.text ?: ""
+//        println()
+//    }
+
+fun readCurrentFile(project: Project): String? {
+    val editor = EditorFactory.getInstance().allEditors.firstOrNull() ?: return null
+    val document = editor.document
+    val virtualFile: VirtualFile = FileDocumentManager.getInstance().getFile(document) ?: return null
+    return String(virtualFile.contentsToByteArray(), Charsets.UTF_8)
+}
+
+
