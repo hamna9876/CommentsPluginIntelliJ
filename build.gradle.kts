@@ -25,6 +25,7 @@ repositories {
 dependencies {
 //    implementation(libs.exampleLibrary)
     implementation(kotlin("stdlib"))
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.24")
 }
 
 // Set the JVM language level used to build the project.

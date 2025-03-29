@@ -54,7 +54,7 @@ fun main()
         for (line in lines)
         {
             if (isStandardComment(line)) {
-                println(line)
+                print(line)
                 count++
             }
         }
