@@ -11,8 +11,9 @@ fun main()
 //    println(countCharacters(text))
 //    println(isStandardComment("//tuiethie comment"))
     val commentsText = readFromFile("src/main/resources/exampleCommentsFile.txt")
-    countComments(commentsText)
+//    print(countComments(commentsText))
 
+    print(commentIndexesArray(commentsText))
 
 }
 
@@ -34,7 +35,7 @@ fun main()
         for (currentChar in file)
         {
             if (charMap.contains(currentChar)) {
-                var iterateCurrentValue = charMap[currentChar]!! + 1
+                val iterateCurrentValue = charMap[currentChar]!! + 1
                 charMap.put(currentChar, iterateCurrentValue)
             } else {
                 charMap.put(currentChar, 0)
@@ -61,20 +62,24 @@ fun main()
         return count
     }
 
+    fun commentIndexesArray(file: String) : ArrayList<Int> {
+        val indexArr = ArrayList<Int>()
+        var lineIndex = 0;
+        val lines = file.lines()
+        for (line in lines)
+        {
+            if (isStandardComment(line)) {
+                println(lineIndex)
+                indexArr.add(lineIndex)
+            }
+            lineIndex++
+        }
+        return indexArr
+    }
+
 //process lines
 // match other forms of comments
 
-//    fun readFile(virtualFile: VirtualFile) {
-//        val document = FileDocumentManager.getInstance().getDocument(virtualFile)
-//        val fileContent = document?.text ?: ""
-//        println()
-//    }
-
-//fun readCurrentFile(project: Project): String? {
-//    val editor = EditorFactory.getInstance().allEditors.firstOrNull() ?: return null
-//    val document = editor.document
-//    val virtualFile: VirtualFile = FileDocumentManager.getInstance().getFile(document) ?: return null
-//    return String(virtualFile.contentsToByteArray(), Charsets.UTF_8)
 //}
 
 
